@@ -1,4 +1,4 @@
-package com.br.zup.casadocodigo.detalhelivro;
+package com.br.zup.casadocodigo.detalhamentolivro;
 
 import com.br.zup.casadocodigo.autor.Autor;
 

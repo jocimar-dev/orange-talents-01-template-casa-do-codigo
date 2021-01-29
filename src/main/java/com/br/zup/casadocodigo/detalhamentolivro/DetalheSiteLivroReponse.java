@@ -1,7 +1,6 @@
-package com.br.zup.casadocodigo.detalhelivro;
+package com.br.zup.casadocodigo.detalhamentolivro;
 
 import com.br.zup.casadocodigo.cadastrolivro.Livro;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
 import java.time.format.DateTimeFormatter;
