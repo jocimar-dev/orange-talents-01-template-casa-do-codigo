@@ -2,26 +2,26 @@ package com.br.zup.casadocodigo.autor;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/autores")
 public class CadastraAutorController {
 
-    @Autowired
-    private AutorRepository autorRepository;
+    @PersistenceContext
+    private EntityManager manager;
 
-    @PostMapping
-    public ResponseEntity<Object> cadastrar(@RequestBody @Valid InsereAutorRequest insereAutor) {
+    @PostMapping("/autores")
+    @Transactional
+    public String cadastrar(@RequestBody @Valid InsereAutorRequest insereAutor) {
 
         Autor autor = insereAutor.paraAutor();
-        System.out.println(autor);
-
-        autorRepository.save(autor);
-
-        return ResponseEntity.ok().build();
+        manager.persist(autor);
+        return autor.toString();
 
     }
 

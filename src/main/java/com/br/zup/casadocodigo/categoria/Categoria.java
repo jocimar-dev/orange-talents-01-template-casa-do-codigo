@@ -21,6 +21,7 @@ public class Categoria {
         this.nome = nome;
     }
 
+    @Deprecated
     public Categoria() {
     }
 

@@ -1,18 +1,16 @@
 package com.br.zup.casadocodigo.categoria;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.br.zup.casadocodigo.validations.UniqueValue;
 
 import javax.validation.constraints.NotBlank;
 
 public class NovaCategoriaRequest {
 
     @NotBlank
-    @JsonDeserialize(as = CategoriaRepository.class)
-
+    @UniqueValue(domainClass = Categoria.class, fieldName = "nome")
     private String nome;
 
-    public NovaCategoriaRequest(String nome) {
-        super();
+    public void setNome(String nome) {
         this.nome = nome;
     }
 

@@ -26,8 +26,6 @@ public class Autor {
     @Size(max = 400)
     private String descricao;
 
-    private boolean ehAdmin = false;
-
     private LocalDateTime criadoEm = LocalDateTime.now();
 
     public Autor(String nome, String email, String descricao) {
@@ -55,10 +53,6 @@ public class Autor {
 
     public String getDescricao() {
         return descricao;
-    }
-
-    public boolean isEhAdmin() {
-        return ehAdmin;
     }
 
     @Override
